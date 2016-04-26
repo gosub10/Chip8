@@ -1,4 +1,20 @@
 #pragma once
+
+#define func(type,name) type (T::*name)(unsigned u,unsigned p,unsigned y,unsigned x, unsigned kk, unsigned nnn)
+
+
+template<class T>
+class OpCode
+{
+public:
+	int16	opcode;
+	const char *assem;
+	const char *exp;
+	func(bool, check);
+	func(void, run);
+	const char *desc;
+
+};
 class Chip8
 {
 public:
@@ -13,16 +29,12 @@ public:
 
 private:
 	std::thread	*m_pMainCycler;
+	static std::map<int16,OpCode<Chip8>*>	s_OpCodeTable;
 
-};
 
-template<class T>
-class OpCode
-{
-public:
-	const char *asm;
-	const char *exp;
-	bool (T::*check)(unsigned u,unsigned p,unsigned y,unsigned x, unsigned kk, unsigned nnn);
-	void (T::*run)(unsigned u, unsigned p, unsigned y, unsigned x, unsigned kk, unsigned nnn);
-	const char *desc;
+private:
+	bool cls_check(unsigned u, unsigned p, unsigned y, unsigned x, unsigned kk, unsigned nnn);
+	void cls_run(unsigned u, unsigned p, unsigned y, unsigned x, unsigned kk, unsigned nnn);
+
+
 };

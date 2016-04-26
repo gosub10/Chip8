@@ -17,7 +17,7 @@ int main()
 	signal(SIGBREAK, OnSignal);
 	
 
-	CChip8 *p = new CChip8();
+	Chip8 *p = new Chip8();
 
 	p->Start();
 

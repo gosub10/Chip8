@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\OpCodeHandler">
+      <UniqueIdentifier>{9050bb3f-f957-4d55-8640-a40941b33bef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -30,6 +33,9 @@
     <ClInclude Include="Condition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Chip8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -40,6 +46,15 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Chip8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpCodeChecks.cpp">
+      <Filter>Source Files\OpCodeHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="OpCodeRuns.cpp">
+      <Filter>Source Files\OpCodeHandler</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
